@@ -90,7 +90,9 @@ request.onload = function () {
         if (subPage) {
           return /*#__PURE__*/React.createElement("div", {
             className: "container"
-          }, /*#__PURE__*/React.createElement("h2", null, clubData.name));
+          }, /*#__PURE__*/React.createElement("h2", null, clubData.name), /*#__PURE__*/React.createElement("img", {
+            src: "https://masonstudentactivities.github.io/thumbnails/" + clubData.name + ".png"
+          }));
         }
       }
     }]);
