@@ -40,14 +40,27 @@ request.onload = function () {
     return "https://drive.google.com/uc?export=view&id=" + id;
   }
 
+  var argName = decodeURI(location.search.split("?")[1]);
+  var subPage = false;
+  var clubData = {};
+
   for (var i = 0; i < response.length; i++) {
-    cards.push( /*#__PURE__*/React.createElement("a", {
-      className: "thumbnail col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2",
-      key: i,
-      href: "?" + response[i].clubName
-    }, /*#__PURE__*/React.createElement("img", {
-      src: transformURL(response[i].thumbURL)
-    }), /*#__PURE__*/React.createElement("h2", null, response[i].clubName)));
+    if (response[i].name === argName) {
+      subPage = true;
+      clubData = response[i];
+    }
+  }
+
+  if (!subPage) {
+    for (var _i = 0; _i < response.length; _i++) {
+      cards.push( /*#__PURE__*/React.createElement("a", {
+        className: "thumbnail col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2",
+        key: _i,
+        href: "?" + response[_i].name
+      }, /*#__PURE__*/React.createElement("img", {
+        src: transformURL(response[_i].thumbURL)
+      }), /*#__PURE__*/React.createElement("h2", null, response[_i].name)));
+    }
   }
 
   console.log(cards);
@@ -66,11 +79,19 @@ request.onload = function () {
     _createClass(App, [{
       key: "render",
       value: function render() {
-        return /*#__PURE__*/React.createElement("div", {
-          className: "container"
-        }, /*#__PURE__*/React.createElement("div", {
-          className: "row"
-        }, cards));
+        if (!subPage) {
+          return /*#__PURE__*/React.createElement("div", {
+            className: "container"
+          }, /*#__PURE__*/React.createElement("div", {
+            className: "row"
+          }, cards));
+        }
+
+        if (subPage) {
+          return /*#__PURE__*/React.createElement("div", {
+            className: "container"
+          }, /*#__PURE__*/React.createElement("h2", null, clubData.name));
+        }
       }
     }]);
 

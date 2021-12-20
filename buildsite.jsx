@@ -13,7 +13,7 @@ request.onload = function(){
       let id = url.split("https://drive.google.com/open?id=")[1];
       return "https://drive.google.com/uc?export=view&id=" + id;
     }
-    let argName = location.search.split("?")[1];
+    let argName = decodeURI(location.search.split("?")[1]);
     let subPage = false;
     let clubData = {};
     for(let i = 0;i< response.length;i++){
