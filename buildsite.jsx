@@ -8,28 +8,50 @@ request.onload = function(){
     console.log(response);
     let cards = [];
 
+    
     function transformURL(url){
       let id = url.split("https://drive.google.com/open?id=")[1];
       return "https://drive.google.com/uc?export=view&id=" + id;
     }
-    for(let i = 0;i<response.length;i++){
-        cards.push(
-          <a className="thumbnail col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2" key={i} href={"?" + response[i].clubName}>
-            <img src={transformURL(response[i].thumbURL)}/>
-            <h2>{response[i].clubName}</h2>
-          </a>
-        )
+    let argName = location.search.split("?")[1];
+    let subPage = false;
+    let clubData = {};
+    for(let i = 0;i< response.length;i++){
+      if(response[i].name === argName){
+        subPage = true;
+        clubData = response[i];
+      }
     }
+    if(!subPage){
+      for(let i = 0;i<response.length;i++){
+          cards.push(
+            <a className="thumbnail col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2" key={i} href={"?" + response[i].name}>
+              <img src={transformURL(response[i].thumbURL)}/>
+              <h2>{response[i].name}</h2>
+            </a>
+          )
+      }
+    }
+
     console.log(cards);
     class App extends React.Component {
         render() {
-          return (
-            <div className="container">
-              <div className="row">
-                {cards}
+          if(!subPage){
+            return (
+              <div className="container">
+                <div className="row">
+                  {cards}
+                </div>
               </div>
-            </div>
-          );
+            );
+          }
+          if(subPage){
+            return(
+              <div className="container">
+                <h2>{clubData.name}</h2>
+              </div>
+            );
+          }
         }
       }
     ReactDOM.render(
