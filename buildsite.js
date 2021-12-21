@@ -26,6 +26,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 //To convert this into buildsite.js, use the babel transpiler found below:
 //https://babeljs.io/en/repl#?browsers=&build=&builtIns=false&corejs=3.6&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.15.7&externalPlugins=&assumptions=%7B%7D
+//Get the JSON contained within our git repo
 var request = new XMLHttpRequest();
 request.open('GET', '/pages.json');
 request.send();
@@ -33,14 +34,18 @@ request.send();
 request.onload = function () {
   var response = JSON.parse(request.responseText);
   console.log(response);
-  var cards = [];
+  var cards = []; //Turn our current drive link into one that displays image previews
 
   function transformURL(url) {
     var id = url.split("https://drive.google.com/open?id=")[1];
     return "https://drive.google.com/uc?export=view&id=" + id;
-  }
+  } //Are we on a subpage? Check by using URL variables
+  //Subpages woudld look like: masonstudentactivities.github.io?chess
+  //argName would look like: chess
 
-  var argName = decodeURI(location.search.split("?")[1]);
+
+  var argName = decodeURI(location.search.split("?")[1]); //We extracted argName, but is it a valid club?
+
   var subPage = false;
   var clubData = {};
 
@@ -49,7 +54,8 @@ request.onload = function () {
       subPage = true;
       clubData = response[i];
     }
-  }
+  } //If URL variables don't show a valid club, build an array of thumbnail cards
+
 
   if (!subPage) {
     for (var _i = 0; _i < response.length; _i++) {
@@ -79,19 +85,21 @@ request.onload = function () {
     _createClass(App, [{
       key: "render",
       value: function render() {
+        //If we aren't on a valid club page, render the thumbnails page
         if (!subPage) {
           return /*#__PURE__*/React.createElement("div", {
             className: "container"
           }, /*#__PURE__*/React.createElement("div", {
             className: "row"
           }, cards));
-        }
+        } //If we are on a valid club page, render the club using clubData
+
 
         if (subPage) {
           return /*#__PURE__*/React.createElement("div", {
             className: "container"
           }, /*#__PURE__*/React.createElement("h2", null, clubData.name), /*#__PURE__*/React.createElement("img", {
-            src: "https://masonstudentactivities.github.io/thumbnails/" + clubData.name + ".png"
+            src: "https://masonstudentactivities.github.io/thumbnails/" + clubData.name + clubData.fileExtension
           }));
         }
       }

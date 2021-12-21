@@ -58,7 +58,7 @@ request.onload = function(){
             return(
               <div className="container">
                 <h2>{clubData.name}</h2>
-                <img src={"https://masonstudentactivities.github.io/thumbnails/" +clubData.name + ".png"} />
+                <img src={"https://masonstudentactivities.github.io/thumbnails/" +clubData.name + clubData.fileExtension} />
               </div>
             );
           }
