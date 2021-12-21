@@ -1,10 +1,10 @@
-name: CI/CD
+name: React Build and Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -26,12 +26,6 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-
-    - name: Run the tests and generate coverage report
-      run: npm test -- --coverage
-
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
 
     - name: Build
       run: npm run build
