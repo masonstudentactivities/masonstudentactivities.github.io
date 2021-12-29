@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { BrowserRouter,Routes,Route } from "react-router-dom";
 
+import pages from './pages';
+import App from './App';
+import Page from "./Page";
+
+let routes = [];
+for(let i = 0;i<pages.length;i++){
+  routes.push(
+    <Route path={pages[i].name} element={<Page data={pages[i]} />}/>
+  )
+}
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        {routes}
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
