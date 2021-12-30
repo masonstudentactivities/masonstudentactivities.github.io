@@ -7,6 +7,7 @@ import path from 'path'
 
 // Get started at https://react-static.js.org
 export default {
+  siteRoot: "https://masonstudentactivities.github.io",
   getRoutes: async () => {
     const pages = require("./src/pages.json");
     return [
