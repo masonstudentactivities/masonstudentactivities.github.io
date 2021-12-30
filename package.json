@@ -1,5 +1,6 @@
 {
-  "name": "react-static-example-blank",
+  "name": "masonstudentactivities.github.io",
+  "homepage": "https://masonstudentactivities.github.io/",
   "private": true,
   "scripts": {
     "start": "react-static start",
