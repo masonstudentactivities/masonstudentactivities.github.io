@@ -27,13 +27,7 @@ export default {
     ]
   },
   plugins:[
-    [
-      require.resolve('react-static-plugin-source-filesystem'),
-      {
-        location: path.resolve('./src/templates'),
-      },
-    ],
-    require.resolve('react-static-plugin-reach-router'),
-    require.resolve('react-static-plugin-sitemap'),]
+    require.resolve('react-static-plugin-reach-router')
+  ]
   // Remove this when you start doing any static generation
 }
