@@ -4,9 +4,10 @@
   "scripts": {
     "start": "react-static start",
     "stage": "react-static build --staging",
-    "build": "react-static build",
+    "build": "CI=false && react-static build",
     "analyze": "react-static build --analyze",
-    "serve": "serve dist -p 3000"
+    "serve": "serve dist -p 3000",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^16.14.0",
