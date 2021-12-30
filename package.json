@@ -1,6 +1,7 @@
 {
   "name": "masonstudentactivities.github.io",
   "homepage": "https://masonstudentactivities.github.io/",
+  "main":"index.js",
   "private": true,
   "scripts": {
     "start": "react-static start",
