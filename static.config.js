@@ -21,7 +21,7 @@ export default {
     return [
       {
         path: '/',
-        template: 'src/templates/index'
+        template: 'src/templatesIsAReservedWord/index'
       },
       ...pagesObj
     ]
