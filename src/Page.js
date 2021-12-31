@@ -20,7 +20,6 @@ function Page() {
             <hr/>
             <h4>About this club</h4>
             <p>{data.description}</p>
-
             <h4>{data.sectionOneTitle}</h4> 
             <p>{data.sectionOneContent}</p>
             <h4>{data.sectionTwoTitle}</h4>
