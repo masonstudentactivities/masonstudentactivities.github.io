@@ -37,7 +37,7 @@ export default {
     const pages = require("./src/pages.json");
     let pagesObj = pages.map(page => ({
         path: `/${page.name}`,
-        template: 'src/Page',
+        template: 'src/content/club/Page',
         getData: () => ({
           "data":page
         })
@@ -46,7 +46,7 @@ export default {
     return [
       {
         path: '/',
-        template: 'src/templatesIsAReservedWord/index'
+        template: 'src/content/homepage/index'
       },
       ...pagesObj
     ]

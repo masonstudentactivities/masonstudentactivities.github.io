@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Link } from './../components/Router';
-import pages from "./../pages";
-import Header from "./../components/Header";
+import { Link } from './../../components/Router';
+import pages from "./../../pages";
+import Header from "./../../components/Header";
 import BootstrapDropdown from './BootstrapDropdown';
 
 const filterData = {

@@ -14,7 +14,7 @@ class BootstrapDropdown extends React.Component{
         return(
             <div className="btn-group filter">
     <button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        {this.props.name} : {this.state.selected || this.props.options[0]}
+        {this.props.name}: {this.state.selected || this.props.options[0]}
     </button>
     <ul className="dropdown-menu">
         {this.props.options.map((val) => {
