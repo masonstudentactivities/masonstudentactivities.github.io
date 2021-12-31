@@ -2,10 +2,13 @@ import React from 'react';
 import formatDate from "./functions/formatDate";
 import { useRouteData } from 'react-static'
 import { Link } from './components/Router'
+import Header from "./components/Header";
 
 function Page() {
     const { data } = useRouteData();
     return (
+        <>
+        <Header/>
         <div className="container">
             <p>
                 <Link to="/">MHS Activities</Link> &gt; 
@@ -13,7 +16,8 @@ function Page() {
                 <Link to={"/" + data.name}>{data.name}</Link> </p>
             <h2>{data.name}</h2>
             <a href={data.schoologyPage}>Schoology Link</a>&nbsp;
-            <a href={data.website}>Website Link</a><br/><br/>
+            <a href={data.website}>Website Link</a>
+            <hr/>
             <h4>About this club</h4>
             <p>{data.description}</p>
 
@@ -38,6 +42,7 @@ function Page() {
 
 
         </div>
+        </>
     );
 }
 export default Page;

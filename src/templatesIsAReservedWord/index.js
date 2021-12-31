@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Link } from './../components/Router';
 import pages from "./../pages";
+import Header from "./../components/Header";
 
 export default function() {
   let cards = [];
@@ -15,10 +16,15 @@ export default function() {
       )
   }
   return (
-    <div className="container">
-      <div className="row">
-        {cards}
+    <>
+    <Header isIndex="true"/>
+    <div id="thumbnail-container">
+      <div className="container">
+        <div className="row">
+          {cards}
+        </div>
       </div>
     </div>
+    </>
     )
 }

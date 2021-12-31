@@ -3,10 +3,34 @@
 // - Document shell (index.html)
 // - ...tons of other things!
 
-import path from 'path'
-
+import React from 'react'
 // Get started at https://react-static.js.org
 export default {
+  Document: ({
+    Html,
+    Head,
+    Body,
+    children,
+    state: { siteData, renderMeta },
+  }) => (
+    <Html lang="en-US">
+      <Head>
+        <meta charSet="utf-8" />
+        <link rel="icon" href="favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
+        <link rel="apple-touch-icon" href="logo192.png" />
+        <link rel="manifest" href="manifest.json" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <title>React App</title>
+      </Head>
+    <Body>{children}</Body>
+  </Html>
+  ),
   siteRoot: "https://masonstudentactivities.github.io",
   getRoutes: async () => {
     const pages = require("./src/pages.json");
