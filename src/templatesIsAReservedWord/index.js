@@ -25,7 +25,6 @@ class index extends React.Component {
     this.setState(newState);
   }
   render(){
-    let cards = [];
     let filters = Object.keys(filterData).map((property) => {
       return <BootstrapDropdown key={property} filtersUpdate={this.filtersUpdate.bind(this)} name={property} options={filterData[property]}/>
     })
@@ -46,6 +45,7 @@ class index extends React.Component {
       }
       return true;
     }
+    let cards = [];
     for(let i = 0;i<pages.length;i++){
         cards.push(
           <Link to={"/"+pages[i].name} className={"thumbnail col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 " + (shouldBeVisisble(i) ? "" : "hidden")} key={i}>
