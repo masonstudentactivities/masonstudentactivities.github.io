@@ -62,10 +62,6 @@ class index extends React.Component {
                 Filters:
             </li>
             {filters}
-
-            <li className="nav-item">
-                <button className="btn btn-sm btn-outline-success" type="button">+ Add filter</button>
-            </li>
         </ul>
       </div>
     </nav>
