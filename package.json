@@ -6,12 +6,11 @@
   "scripts": {
     "start": "react-static start",
     "stage": "react-static build --staging",
-    "local-build":"react-static build",
-    "build": "CI=false && react-static build",
+    "build":"react-static build",
     "analyze": "react-static build --analyze",
     "serve": "serve dist -p 3000",
-    "predeploy":"touch dist/.nojekyll",
-    "deploy": "gh-pages -d dist"
+    "predeploy":"CI=false && react-static build",
+    "deploy": "node ghpages.js"
   },
   "dependencies": {
     "@reach/router": "^1.3.4",
