@@ -29,13 +29,22 @@ class index extends React.Component {
     let filters = Object.keys(filterData).map((property) => {
       return <BootstrapDropdown key={property} filtersUpdate={this.filtersUpdate.bind(this)} name={property} options={filterData[property]}/>
     })
-    function shouldBeVisisble(index){
+    let shouldBeVisisble = (index) => {
       let page = pages[index];
-      let visible = true;
-      if(filters[0].state !== undefined && (page.category !== filters[0].state.selected || filters[0].state.selected === "Any")){
-        visible = false;
+      console.log(this.state["Category"])
+      if(page.category !== this.state["Category"] && this.state["Category"] !== "Any"){
+        return false;
       }
-      return visible;
+      let mobilityRating = parseInt(page.mobilityRating.substring(0,1));
+      if(mobilityRating < filterData["Mobility Level"].indexOf(this.state["Mobility Level"]) && this.state["Mobility Level"] !== "Any"){
+        //This is so hacky but it works
+        return false;
+      }
+      let soundRating = parseInt(page.soundRating.substring(0,1));
+      if(soundRating < filterData["Noise Level"].indexOf(this.state["Noise Level"]) && this.state["Noise Level"] !== "Any"){
+        return false;
+      }
+      return true;
     }
     for(let i = 0;i<pages.length;i++){
         cards.push(
