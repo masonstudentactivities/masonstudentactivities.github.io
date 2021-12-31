@@ -50,3 +50,6 @@ color:white;
 .site-link{
   margin-right:10px;
 }
+.hidden{
+  visibility:hidden;
+}

@@ -12,7 +12,7 @@ function Page() {
         <div className="container">
             <p>
                 <Link to="/">MHS Activities</Link> &gt; 
-                <Link to={"/?filter=" + data.category}>{data.category}</Link> &gt; 
+                <Link to={"/?category=" + data.category}>{data.category}</Link> &gt; 
                 <Link to={"/" + data.name}>{data.name}</Link> </p>
             <h2>{data.name}</h2>
             {
