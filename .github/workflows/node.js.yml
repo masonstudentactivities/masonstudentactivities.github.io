@@ -29,8 +29,6 @@ jobs:
 
     - name: Build
       run: npm run build
-    - name: Create .nojekyll
-      run: touch .nojekyll
     - name: Deploy
       run: |
         git config --global user.name masonstudentactivities
@@ -42,3 +40,5 @@ jobs:
         user_email: 'github-actions[bot]@users.noreply.github.com'
         github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
         repository: ${{ github.repository }}
+    - name: Create .nojekyll
+      run: touch .nojekyll
