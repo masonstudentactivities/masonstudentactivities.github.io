@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import { Root,Routes } from 'react-static'
-//
 import { Link, Router } from './components/Router';
 
 import './app.css';
@@ -14,7 +13,7 @@ function App() {
     return (
       <Root>
         <Helmet>
-          <title>You are at the homepage!!!</title>
+          <title>MHS Student Activities</title>
         </Helmet>
         <React.Suspense fallback={<em>Loading...</em>}>
           <Router id="site-content" className="content">
