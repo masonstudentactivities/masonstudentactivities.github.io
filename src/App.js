@@ -4,7 +4,6 @@ import { Root,Routes } from 'react-static'
 import { Link, Router } from './components/Router';
 
 import './app.css';
-import logo from './logo.png';
 import pages from "./pages";
 import {Helmet} from "react-helmet";
 
