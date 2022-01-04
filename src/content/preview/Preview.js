@@ -2,9 +2,10 @@ import React from 'react';
 import Header from "./../../components/Header";
 import PageContent from "./../club/PageContent";
 import { Helmet } from 'react-helmet';
+
 function Preview() {
     let approved, proposed;
-    if(typeof document !== undefined){
+    if(typeof window !== 'undefined'){
         let url_string = window.location.href;
         let url = new URL(url_string);
         approved = JSON.parse(url.searchParams.get("approved"));
@@ -15,7 +16,12 @@ function Preview() {
         if(proposed !== undefined){
             proposed.thumbURL = proposed.thumbURL.replace("open?","uc?")
         }
+    } else{
+        return (
+            <div>You don't have Javascript enabled! Previews will not work.</div>
+        )
     }
+    
     return (
         <>
         <Header/>
