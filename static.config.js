@@ -43,6 +43,10 @@ export default {
         path: '/',
         template: 'src/content/homepage/index'
       },
+      {
+        path:'/preview',
+        template: 'src/content/preview/Preview'
+      },
       ...pagesObj
     ]
   },
