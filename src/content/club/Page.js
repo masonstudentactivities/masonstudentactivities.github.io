@@ -10,6 +10,7 @@ function Page() {
         <Header/>
         <Helmet>
             <title>MHS Student Activities - {data.name}</title>
+            <meta name="description" content={data.description}/>
         </Helmet>
         <PageContent data={data}/>
         </>

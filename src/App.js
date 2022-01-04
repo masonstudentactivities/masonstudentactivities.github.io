@@ -14,6 +14,7 @@ function App() {
       <Root>
         <Helmet>
           <title>MHS Student Activities</title>
+          <meta name="description" content="Explore enriching extracurricular options for the Mason City Schools district."/>
         </Helmet>
         <React.Suspense fallback={<em>Loading...</em>}>
           <Router id="site-content" className="content">
