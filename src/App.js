@@ -7,11 +7,15 @@ import { Link, Router } from './components/Router';
 import './app.css';
 import logo from './logo.png';
 import pages from "./pages";
+import {Helmet} from "react-helmet";
 
 function App() {
   //If we aren't on a valid club page, render the thumbnails page
     return (
       <Root>
+        <Helmet>
+          <title>You are at the homepage!!!</title>
+        </Helmet>
         <React.Suspense fallback={<em>Loading...</em>}>
           <Router id="site-content" className="content">
             <Routes path="*"/>

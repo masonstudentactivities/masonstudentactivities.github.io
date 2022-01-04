@@ -1,15 +1,15 @@
 {
   "name": "masonstudentactivities.github.io",
   "homepage": "https://masonstudentactivities.github.io/",
-  "main":"index.js",
+  "main": "index.js",
   "private": true,
   "scripts": {
     "start": "react-static start",
     "stage": "react-static build --staging",
-    "build":"react-static build",
+    "build": "react-static build",
     "analyze": "react-static build --analyze",
     "serve": "serve dist -p 3000",
-    "predeploy":"CI=false && react-static build",
+    "predeploy": "CI=false && react-static build",
     "deploy": "node ghpages.js"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "gh-pages": "^3.2.3",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-helmet": "^6.1.0",
     "react-hot-loader": "^4.13.0",
     "react-static": "^7.5.1",
     "react-static-plugin-reach-router": "^7.6.2",

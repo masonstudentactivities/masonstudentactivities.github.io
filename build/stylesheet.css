@@ -1,0 +1,12 @@
+img{
+    width:100%;
+    aspect-ratio: 315/230;
+    object-fit: stretch;
+}
+.thumbnail{
+    border:1px solid black;
+    display:block;
+}
+h1{
+    color:#008211;
+}
