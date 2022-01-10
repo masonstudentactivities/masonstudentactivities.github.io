@@ -7,6 +7,7 @@ import JSONCrush from '../../functions/JSONCrush';
 function Preview() {
     let approved, proposed;
     let approvedElement, proposedElement;
+    let clubName = "";
     if(typeof window !== 'undefined'){
         let url_string = window.location.href;
         let url = new URL(url_string);
@@ -71,6 +72,12 @@ function Preview() {
                 </div>
             )
         }
+        if(approved){
+            clubName = approved.name;
+        }
+        if(proposed){
+            clubName = proposed.name;
+        }
     } else{
         return (
             <div>You don't have Javascript enabled! Previews will not work.</div>
@@ -98,7 +105,7 @@ function Preview() {
             }
         `
     }]}>
-            <title>Web Preview - {proposed.name || approved.name}</title>
+            <title>Web Preview - {clubName}</title>
         </Helmet>
         <div className="row">
             {proposedElement}
