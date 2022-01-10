@@ -24,6 +24,12 @@ export default {
         <link rel="manifest" href="/manifest.json" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        {/* opengraph embeds */}
+        <meta content={"MHS Student Activities Homepage"} property="og:title"/>
+        <meta content="Explore enriching extracurricular options for the Mason City Schools district." property="og:description"/>
+        <meta content="MHS Student Activities" property="og:site_name"/>
+        <meta content="/logo192.png" property='og:image'/>
+
       </Head>
     <Body>{children}</Body>
   </Html>
