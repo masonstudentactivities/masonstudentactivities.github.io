@@ -4,7 +4,7 @@ function Icon(props){
         // props.type: mobility
         // props.level: Low
         <img src={"/icons/" + props.level + "_" + props.type.toLowerCase() + ".png"} 
-            data-placement="top" data-toggle="tooltip" title={props.level + " " + props.type}/>
+            data-bs-placement="top" data-bs-toggle="tooltip" title={props.level + " " + props.type}/>
     );
 }
 export default Icon;

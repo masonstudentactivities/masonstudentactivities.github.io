@@ -20,6 +20,13 @@ class index extends React.Component {
       this.state[key] = filterData[key][0] //Default selected values to 0th element in filterData array
     })
   }
+  componentDidMount(){
+    console.log("hello1!!")
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  }
   filtersUpdate(dropdownName,value){
     let newState = this.state;
     newState[dropdownName] = value;
