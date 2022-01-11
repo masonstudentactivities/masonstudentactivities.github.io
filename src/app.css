@@ -53,3 +53,9 @@ color:white;
 .hidden{
   visibility:hidden;
 }
+.icon{
+  border-radius: 50%;
+  max-width: 25%;
+  max-height: 25%;
+  aspect-ratio: 1/1 !important;
+}
