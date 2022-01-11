@@ -1,6 +1,9 @@
 html{
   height:100%;
 }
+body{
+  padding-top: 20px;
+}
 img{
   width:100%;
   aspect-ratio: 315/230;

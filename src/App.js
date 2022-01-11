@@ -18,7 +18,7 @@ function App() {
           <meta content={"MHS Student Activities Homepage"} property="og:title"/>
           <meta content="Explore enriching extracurricular options for the Mason City Schools district." property="og:description"/>
           <meta content="MHS Student Activities" property="og:site_name"/>
-          <meta content="/logo192.png" property='og:image'/>
+          <meta content="/images/logos/logo192.png" property='og:image'/>
         </Helmet>
         <React.Suspense fallback={<em>Loading...</em>}>
           <Router id="site-content" className="content">

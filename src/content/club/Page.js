@@ -15,7 +15,7 @@ function Page() {
             <meta content={"MHS Student Activities - " + data.name} property="og:title"/>
             <meta content={data.description} property="og:description"/>
             <meta content="MHS Student Activities" property="og:site_name"/>
-            <meta content="/logo192.png" property='og:image'/>
+            <meta content="/images/logos/logo192.png" property='og:image'/>
         </Helmet>
         <PageContent data={data}/>
         </>
