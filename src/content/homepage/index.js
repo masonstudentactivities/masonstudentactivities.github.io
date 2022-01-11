@@ -4,6 +4,7 @@ import { Link } from './../../components/Router';
 import pages from "./../../pages";
 import Header from "./../../components/Header";
 import BootstrapDropdown from './BootstrapDropdown';
+import Icon from "./../../components/Icon";
 
 const filterData = {
   "Category":["Any","Honors Societies (Non-Competitive)","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
@@ -17,6 +18,13 @@ class index extends React.Component {
     this.state = {};
     Object.keys(filterData).forEach((key) => {
       this.state[key] = filterData[key][0] //Default selected values to 0th element in filterData array
+    })
+  }
+  componentDidMount(){
+    console.log("hello1!!")
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
     })
   }
   filtersUpdate(dropdownName,value){
@@ -51,6 +59,8 @@ class index extends React.Component {
           <Link to={"/"+pages[i].name} className={"thumbnail col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 " + (shouldBeVisisble(i) ? "" : "hidden")} key={i}>
             <img src={"/images/thumbnails/" +pages[i].name + "." + pages[i].fileExtension}/>
             <h2>{pages[i].name}</h2>
+            <Icon type="sound" level={pages[i].soundRating}></Icon>
+            <Icon type="mobility" level={pages[i].mobilityRating}></Icon>
           </Link>
         )
     }
