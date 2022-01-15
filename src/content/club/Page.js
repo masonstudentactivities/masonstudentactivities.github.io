@@ -4,11 +4,11 @@ import Header from "./../../components/Header";
 import PageContent from "./PageContent";
 import { Helmet } from 'react-helmet';
 function Page() {
-    const { data } = useRouteData();
+    const { page } = useRouteData();
     return (
         <>
         <Header/>
-        <PageContent data={data}/>
+        <PageContent data={page}/>
         </>
     );
 }

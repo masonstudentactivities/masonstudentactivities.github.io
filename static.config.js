@@ -60,7 +60,7 @@ export default {
           "site":site
         })
       });
-      pagesObj.concat(
+      pagesObj = pagesObj.concat(
         pages.map((page) => ({
           "path": `/${site.directory}/${page.name}`,
           "template": "src/content/club/Page",

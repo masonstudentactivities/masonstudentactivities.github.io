@@ -12,8 +12,8 @@ function App() {
   //If we aren't on a valid club page, render the thumbnails page
     return (
       <Root>
-        <Meta/>
         <React.Suspense fallback={<em>Loading...</em>}>
+          <Meta/>
           <Router id="site-content" className="content">
             <Routes path="*"/>
           </Router>
