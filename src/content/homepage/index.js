@@ -4,6 +4,7 @@ import pages from "./../../pages";
 import Header from "./../../components/Header";
 import BootstrapDropdown from './BootstrapDropdown';
 import Thumbnail from "./Thumbnail";
+import Meta from "./../../components/Meta";
 
 const filterData = {
   "Category":["Any","Honors Societies (Non-Competitive)","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
@@ -71,6 +72,7 @@ class index extends React.Component {
     )
     return (
       <>
+      <Meta/>
       <Header navAddition={Navbar}/>
       <div id="thumbnail-container">
         <div className="container">

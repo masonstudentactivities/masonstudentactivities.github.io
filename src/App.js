@@ -6,14 +6,11 @@ import { Link, Router } from './components/Router';
 import './app.css';
 import pages from "./pages";
 import {Helmet} from "react-helmet";
-import Meta from "./components/Meta"
-
 function App() {
   //If we aren't on a valid club page, render the thumbnails page
     return (
       <Root>
         <React.Suspense fallback={<em>Loading...</em>}>
-          <Meta/>
           <Router id="site-content" className="content">
             <Routes path="*"/>
           </Router>

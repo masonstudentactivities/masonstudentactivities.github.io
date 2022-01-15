@@ -3,6 +3,8 @@ import Header from "./../../components/Header";
 import PageContent from "./../club/PageContent";
 import { Helmet } from 'react-helmet';
 import JSONCrush from '../../functions/JSONCrush';
+import Meta from "./../../components/Meta";
+
 
 function Preview() {
     let approved, proposed;
@@ -87,6 +89,7 @@ function Preview() {
     return (
         <>
         <Header/>
+        <Meta/>
         <Helmet style={[{
         "cssText": `
             .text-dark{

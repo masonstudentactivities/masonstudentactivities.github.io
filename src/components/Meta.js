@@ -2,8 +2,10 @@ import React from "react";
 import Helmet from "react-helmet";
 import { useRouteData } from "react-static";
 function Meta(){
-    const { site, page } = useRouteData();
+    const { site } = useRouteData();
+    const { page } = useRouteData();
     console.log(site);
+    console.log(page);
     let descriptionContent;
     let titleContent;
     if(page){
