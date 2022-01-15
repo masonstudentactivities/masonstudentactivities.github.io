@@ -8,15 +8,6 @@ function Page() {
     return (
         <>
         <Header/>
-        <Helmet>
-            <title>MHS Student Activities - {data.name}</title>
-            <meta name="description" content={data.description}/>
-            {/* opengraph embeds */}
-            <meta content={"MHS Student Activities - " + data.name} property="og:title"/>
-            <meta content={data.description} property="og:description"/>
-            <meta content="MHS Student Activities" property="og:site_name"/>
-            <meta content="/images/logos/logo192.png" property='og:image'/>
-        </Helmet>
         <PageContent data={data}/>
         </>
     );

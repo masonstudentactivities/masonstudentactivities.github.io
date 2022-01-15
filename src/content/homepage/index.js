@@ -1,10 +1,10 @@
 import React from 'react'
-
 import { Link } from './../../components/Router';
 import pages from "./../../pages";
 import Header from "./../../components/Header";
 import BootstrapDropdown from './BootstrapDropdown';
 import Icon from "./../../components/Icon";
+
 
 const filterData = {
   "Category":["Any","Honors Societies (Non-Competitive)","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
@@ -21,7 +21,6 @@ class index extends React.Component {
     })
   }
   componentDidMount(){
-    console.log("hello1!!")
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
