@@ -30,8 +30,13 @@ class index extends React.Component {
   }
   componentDidMount(){
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    this.tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  }
+  componentWillUnmount(){
+    this.tooltipList.forEach(function(val){
+      val.dispose();
     })
   }
   filtersUpdate(dropdownName,value){
