@@ -7,9 +7,9 @@ import Thumbnail from "./Thumbnail";
 import Meta from "./../../components/Meta";
 
 const filterData = {
-  "Category":["Any","Honors Societies (Non-Competitive)","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
+  "Category":["Any","Honors Societies","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
+  "Noise Level":["Any","Low","Medium","High"],
   "Mobility Level":["Any","Low","Medium","High"],
-  "Noise Level":["Any","Low","Medium","High"]
 }
 
 function withPageJSON(Component) {
@@ -50,13 +50,11 @@ class index extends React.Component {
       if(page.category !== this.state["Category"] && this.state["Category"] !== "Any"){
         return false;
       }
-      let mobilityRating = parseInt(page.mobilityRating.substring(0,1));
-      if(mobilityRating < filterData["Mobility Level"].indexOf(this.state["Mobility Level"]) && this.state["Mobility Level"] !== "Any"){
+      if(filterData["Mobility Level"].indexOf(page.mobilityRating) < filterData["Mobility Level"].indexOf(this.state["Mobility Level"]) && this.state["Mobility Level"] !== "Any"){
         //This is so hacky but it works
         return false;
       }
-      let soundRating = parseInt(page.soundRating.substring(0,1));
-      if(soundRating < filterData["Noise Level"].indexOf(this.state["Noise Level"]) && this.state["Noise Level"] !== "Any"){
+      if(filterData["Noise Level"].indexOf(page.soundRating) < filterData["Noise Level"].indexOf(this.state["Noise Level"]) && this.state["Noise Level"] !== "Any"){
         return false;
       }
       return true;

@@ -18,6 +18,9 @@ class BootstrapDropdown extends React.Component{
     </button>
     <ul className="dropdown-menu">
         {this.props.options.map((val) => {
+            if(val === "High"){
+                return;
+            }
             return <li key={val}><button className="dropdown-item" href="#" onClick={this.updateSelected(val)}>{val}</button></li>
         })}
     </ul>
