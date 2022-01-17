@@ -1,14 +1,19 @@
 import React from 'react';
 import Header from "./../../components/Header";
-import PageContent from "./../club/PageContent";
+import MappedPage from "./../../content/club/MappedPage";
+
 import { Helmet } from 'react-helmet';
 import JSONCrush from '../../functions/JSONCrush';
+import Meta from "./../../components/Meta";
+
 
 function Preview() {
+    const { site } = useRouteData();
     let approved, proposed;
     let approvedElement, proposedElement;
     let clubName = "";
     if(typeof window !== 'undefined'){
+        
         let url_string = window.location.href;
         let url = new URL(url_string);
         let urlData = url.searchParams.get("data");
@@ -36,10 +41,7 @@ function Preview() {
                     <h3>Approved webpage</h3>
                     <p>This club page is currently on the website</p>
                 </div>
-                {
-                    approved !== undefined &&
-                    <PageContent data={approved}/>
-                }
+                <MappedPage directory={site.directory} data={approved}/>;
             </div>
             );
         }
@@ -65,10 +67,7 @@ function Preview() {
                     <p>"Approve" this club, to put it on the website</p>
 
                 </div>
-                {
-                    proposed !== undefined &&
-                    <PageContent data={proposed}/>
-                }
+                <MappedPage directory={site.directory} data={proposed}/>;
                 </div>
             )
         }
@@ -87,6 +86,7 @@ function Preview() {
     return (
         <>
         <Header/>
+        <Meta/>
         <Helmet style={[{
         "cssText": `
             .text-dark{

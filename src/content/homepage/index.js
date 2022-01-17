@@ -1,15 +1,23 @@
 import React from 'react'
-
 import { Link } from './../../components/Router';
-import pages from "./../../pages";
+import { useRouteData } from "react-static";
 import Header from "./../../components/Header";
 import BootstrapDropdown from './BootstrapDropdown';
-import Icon from "./../../components/Icon";
+import Thumbnail from "./Thumbnail";
+import Meta from "./../../components/Meta";
 
 const filterData = {
-  "Category":["Any","Honors Societies (Non-Competitive)","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
+  "Category":["Any","Honors Societies","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
+  "Noise Level":["Any","Low","Medium","High"],
   "Mobility Level":["Any","Low","Medium","High"],
-  "Noise Level":["Any","Low","Medium","High"]
+}
+
+function withPageJSON(Component) {
+  return function WrappedComponent(props) {
+    const { site } = useRouteData();
+    let pages = require(`./../../pages${site.directory.toUpperCase()}.json`);
+    return <Component {...props} pages={pages} />;
+  }
 }
 
 class index extends React.Component {
@@ -21,10 +29,14 @@ class index extends React.Component {
     })
   }
   componentDidMount(){
-    console.log("hello1!!")
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    this.tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  }
+  componentWillUnmount(){
+    this.tooltipList.forEach(function(val){
+      val.dispose();
     })
   }
   filtersUpdate(dropdownName,value){
@@ -33,6 +45,7 @@ class index extends React.Component {
     this.setState(newState);
   }
   render(){
+    let pages = this.props.pages;
     let filters = Object.keys(filterData).map((property) => {
       return <BootstrapDropdown key={property} filtersUpdate={this.filtersUpdate.bind(this)} name={property} options={filterData[property]}/>
     })
@@ -42,13 +55,11 @@ class index extends React.Component {
       if(page.category !== this.state["Category"] && this.state["Category"] !== "Any"){
         return false;
       }
-      let mobilityRating = parseInt(page.mobilityRating.substring(0,1));
-      if(mobilityRating < filterData["Mobility Level"].indexOf(this.state["Mobility Level"]) && this.state["Mobility Level"] !== "Any"){
+      if(filterData["Mobility Level"].indexOf(page.mobilityRating) < filterData["Mobility Level"].indexOf(this.state["Mobility Level"]) && this.state["Mobility Level"] !== "Any"){
         //This is so hacky but it works
         return false;
       }
-      let soundRating = parseInt(page.soundRating.substring(0,1));
-      if(soundRating < filterData["Noise Level"].indexOf(this.state["Noise Level"]) && this.state["Noise Level"] !== "Any"){
+      if(filterData["Noise Level"].indexOf(page.soundRating) < filterData["Noise Level"].indexOf(this.state["Noise Level"]) && this.state["Noise Level"] !== "Any"){
         return false;
       }
       return true;
@@ -56,12 +67,7 @@ class index extends React.Component {
     let cards = [];
     for(let i = 0;i<pages.length;i++){
         cards.push(
-          <Link to={"/"+pages[i].name} className={"thumbnail col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 " + (shouldBeVisisble(i) ? "" : "hidden")} key={i}>
-            <img src={"/images/thumbnails/" +pages[i].name + "." + pages[i].fileExtension}/>
-            <h2>{pages[i].name}</h2>
-            <Icon type="sound" level={pages[i].soundRating}></Icon>
-            <Icon type="mobility" level={pages[i].mobilityRating}></Icon>
-          </Link>
+          <Thumbnail key={i} page={pages[i]} shouldBeVisible={shouldBeVisisble(i)}/>
         )
     }
     let Navbar = (
@@ -78,6 +84,7 @@ class index extends React.Component {
     )
     return (
       <>
+      <Meta/>
       <Header navAddition={Navbar}/>
       <div id="thumbnail-container">
         <div className="container">
@@ -90,4 +97,4 @@ class index extends React.Component {
       )
   }
 }
-export default index;
+export default withPageJSON(index);

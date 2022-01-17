@@ -1,0 +1,26 @@
+{
+    "sites":[
+        {
+            "name":"Mason High School",
+            "directory":"mhs",
+            "coordinator":{
+                "name":"Lori Fox Allen",
+                "email":"AllenL@masonohioschools.com"
+            }
+        },
+        {
+            "name":"Mason Middle School",
+            "directory":"mms",
+            "coordinator":{
+                "name":"Lori Howard",
+                "email":"HowardL@masonohioschools.com"
+            }
+    
+        }
+    ],
+    "description":"Explore enriching extracurricular options for the Mason City Schools district.",
+    "maintainer":{
+        "name":"Luke Trenaman",
+        "email":"luke.trenaman30@masonohioschools.com"
+    }
+}

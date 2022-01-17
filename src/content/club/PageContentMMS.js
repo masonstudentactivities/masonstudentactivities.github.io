@@ -6,7 +6,8 @@ function PageContent(props){
     return (
         <div className="container">
         <p>
-            <Link to="/"><b>MHS Activities</b></Link> &gt; 
+            <Link to="/"><b>Mason Student Activities</b></Link> &gt;
+            <Link to="/mms"><b>MMS</b></Link> &gt; 
             <b>{data.category}&nbsp;&gt;&nbsp;</b>
             <b>{data.name}</b>
         </p>
