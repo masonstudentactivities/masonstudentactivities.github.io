@@ -8,12 +8,11 @@ import Meta from "./../../components/Meta";
 
 
 function Preview() {
-    const { site } = useRouteData();
     let approved, proposed;
     let approvedElement, proposedElement;
     let clubName = "";
     if(typeof window !== 'undefined'){
-        
+        const { site } = useRouteData();
         let url_string = window.location.href;
         let url = new URL(url_string);
         let urlData = url.searchParams.get("data");
