@@ -1,16 +1,16 @@
 import React from 'react';
 import { useRouteData } from 'react-static'
 import Header from "./../../components/Header";
-import PageContent from "./PageContent";
 import { Helmet } from 'react-helmet';
 import Meta from "../../components/Meta";
+import MappedPage from "./MappedPage";
 function Page() {
-    const { page } = useRouteData();
+    const { site,page } = useRouteData();
     return (
         <>
         <Meta/>
         <Header/>
-        <PageContent data={page}/>
+        <MappedPage directory={site.directory} data={page}/>
         </>
     );
 }

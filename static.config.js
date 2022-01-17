@@ -44,7 +44,7 @@ export default {
   getRoutes: async () => {
     let pagesObj = [];
     config.sites.forEach(function (site) {
-      const pages = require("./src/pages.json"); //Change this line based on JSON file setup
+      const pages = require(`./src/pages${site.directory.toUpperCase()}.json`); //Change this line based on JSON file setup
       console.log(site.directory);
       pagesObj.push({
         "path": `/${site.directory}`,

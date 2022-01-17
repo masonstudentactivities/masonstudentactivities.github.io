@@ -4,7 +4,6 @@ import { useRouteData,getRouteInfo, Root,Routes } from 'react-static'
 import { Link, Router } from './components/Router';
 
 import './app.css';
-import pages from "./pages";
 import {Helmet} from "react-helmet";
 function App() {
   //If we aren't on a valid club page, render the thumbnails page

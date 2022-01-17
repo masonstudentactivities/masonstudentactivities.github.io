@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from './../../components/Router';
-import pages from "./../../pages";
+import { useRouteData } from "react-static";
 import Header from "./../../components/Header";
 import BootstrapDropdown from './BootstrapDropdown';
 import Thumbnail from "./Thumbnail";
@@ -10,6 +10,14 @@ const filterData = {
   "Category":["Any","Honors Societies (Non-Competitive)","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
   "Mobility Level":["Any","Low","Medium","High"],
   "Noise Level":["Any","Low","Medium","High"]
+}
+
+function withPageJSON(Component) {
+  return function WrappedComponent(props) {
+    const { site } = useRouteData();
+    let pages = require(`./../../pages${site.directory.toUpperCase()}.json`);
+    return <Component {...props} pages={pages} />;
+  }
 }
 
 class index extends React.Component {
@@ -32,6 +40,7 @@ class index extends React.Component {
     this.setState(newState);
   }
   render(){
+    let pages = this.props.pages;
     let filters = Object.keys(filterData).map((property) => {
       return <BootstrapDropdown key={property} filtersUpdate={this.filtersUpdate.bind(this)} name={property} options={filterData[property]}/>
     })
@@ -85,4 +94,4 @@ class index extends React.Component {
       )
   }
 }
-export default index;
+export default withPageJSON(index);
