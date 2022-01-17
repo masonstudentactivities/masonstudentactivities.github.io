@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "./../../components/Header";
 import MappedPage from "./../../content/club/MappedPage";
 
-import { useRouteData } from 'reat-static';
+import { useRouteData } from 'react-static';
 import { Helmet } from 'react-helmet';
 import JSONCrush from '../../functions/JSONCrush';
 import Meta from "./../../components/Meta";
