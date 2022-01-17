@@ -2,17 +2,18 @@ import React from 'react';
 import Header from "./../../components/Header";
 import MappedPage from "./../../content/club/MappedPage";
 
+import { useRouteData } from 'reat-static';
 import { Helmet } from 'react-helmet';
 import JSONCrush from '../../functions/JSONCrush';
 import Meta from "./../../components/Meta";
 
 
 function Preview() {
+    const { site } = useRouteData();
     let approved, proposed;
     let approvedElement, proposedElement;
     let clubName = "";
     if(typeof window !== 'undefined'){
-        const { site } = useRouteData();
         let url_string = window.location.href;
         let url = new URL(url_string);
         let urlData = url.searchParams.get("data");
