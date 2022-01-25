@@ -9,7 +9,6 @@ function Page() {
     return (
         <>
         <Meta/>
-        <Header/>
         <MappedPage directory={site.directory} data={page}/>
         </>
     );

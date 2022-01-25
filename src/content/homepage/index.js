@@ -71,7 +71,7 @@ class index extends React.Component {
         )
     }
     let Navbar = (
-    <nav className="navbar navbar-expand-sm navbar-light bg-light">
+    <nav className="navbar navbar-expand-sm">
       <div className="container-fluid">
         <ul className="nav navbar-nav">
             <li className="nav-item">

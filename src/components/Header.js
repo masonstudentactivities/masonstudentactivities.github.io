@@ -5,7 +5,10 @@ function Header(props){
     return(
         <header>
             <div className="container">
-                <h1>{site.directory.toUpperCase()} Student Activities</h1>
+                <div className="title-bar">
+                    <img src="/images/logos/logo_light.png"/>
+                    <h1>{site.directory.toUpperCase()} Student Activities</h1>
+                </div>
                 <p>This site is currently under development! To find student activities information please visit the <a href = "https://sites.google.com/masonohioschools.com/mhsactivities2021/home?scrlybrkr=e3f4ff9b">Google Site</a></p>
             </div>
             { props.navAddition !== undefined && props.navAddition }

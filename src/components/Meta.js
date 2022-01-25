@@ -4,8 +4,6 @@ import { useRouteData } from "react-static";
 function Meta(){
     const { site } = useRouteData();
     const { page } = useRouteData();
-    console.log(site);
-    console.log(page);
     let descriptionContent;
     let titleContent;
     if(page){
