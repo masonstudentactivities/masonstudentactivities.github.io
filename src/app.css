@@ -80,15 +80,19 @@ color:white;
   margin-right:10px;
 }
 .title-bar > h1{
-  font-size:calc(2rem + 1vw);
+    font-size:calc(3.5vw + .7rem) !important;
+    margin:auto;
+    vertical-align: middle;
+    margin-left: 10px;
 }
 .title-bar > img{
-  width:100px;
-  height:100%;
+    width:9vmax;
+    height:100%;
 }
 .title-bar > *{
-  display:inline-block;
-}
+    padding-top:10px;
+    display:inline-block;
+}  
 .info-bar{
   padding:10px;
 }
