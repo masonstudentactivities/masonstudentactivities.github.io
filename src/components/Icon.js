@@ -3,8 +3,10 @@ function Icon(props){
     return(
         // props.type: mobility
         // props.level: Low
-        <img className={"icon " + props.type} src={"/images/icons/" + props.level.toLowerCase() + "_" + props.type + ".png"} 
-            data-bs-placement="top" data-bs-toggle="tooltip" title={props.level + " " + props.type}/>
+        <div className={"icon " + props.type}>
+            <img className="icon-image" src={"/images/icons/" + props.level.toLowerCase() + "_" + props.type + ".png"} 
+                data-bs-placement="top" data-bs-toggle="tooltip" title={props.level + " " + props.type}/>
+        </div>
     );
 }
 export default Icon;

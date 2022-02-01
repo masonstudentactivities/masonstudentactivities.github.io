@@ -79,6 +79,12 @@ color:white;
   aspect-ratio: 1/1 !important;
   margin-right:10px;
 }
+.icon-image{
+    width:30px;
+    height:30px;
+    /* display:inline-block; */
+    padding:2.5px;
+}
 .title-bar > h1{
     font-size:calc(3.5vw + .7rem) !important;
     margin:auto;
