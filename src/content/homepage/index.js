@@ -88,7 +88,7 @@ class index extends React.Component {
       <Header navAddition={Navbar}/>
       <div id="thumbnail-container">
         <div className="container-md-fluid container-xl">
-          <div className="row gx-2 gy-4">
+          <div className="row gx-3 gy-3">
             {cards}
           </div>
         </div>
