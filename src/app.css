@@ -33,9 +33,8 @@ body{
   height:100%;
 } 
 #thumbnail-container{
-  min-height:78vh;
-  padding-top:30px;
-  padding-bottom:30px;
+  padding-top:60px;
+  padding-bottom:60px;
 }
 #root > div {
   position: relative;
