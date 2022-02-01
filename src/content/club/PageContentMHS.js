@@ -34,21 +34,21 @@ function PageContent(props){
             <h4>About this club</h4>
             <p>{data.description}</p>
             {
-                data.sectionOneTitle !== undefined &&
+                data.sectionOneTitle !== undefined && data.sectionOneTitle !== "" &&
                 <>
                 <h4>{data.sectionOneTitle}</h4> 
                 <p>{data.sectionOneContent}</p>
                 </>
             }
             {
-                data.sectionTwoTitle !== undefined &&
+                data.sectionTwoTitle !== undefined && data.sectionTwoTitle !== "" &&
                 <>
                 <h4>{data.sectionTwoTitle}</h4> 
                 <p>{data.sectionTwoContent}</p>
                 </>
             }
             {
-                data.sectionThreeTitle !== undefined &&
+                data.sectionThreeTitle !== undefined && data.sectionThreeTitle !== "" &&
                 <>
                 <h4>{data.sectionThreeTitle}</h4> 
                 <p>{data.sectionThreeContent}</p>
@@ -63,7 +63,7 @@ function PageContent(props){
             }
 
             {
-                data.sectionAccomodationsContent !== undefined &&
+                data.sectionAccomodationsContent !== undefined && data.sectionAccomodationsContent !== "" &&
                 <>
                     <h4>Accomodations</h4>
                     <p>{data.sectionAccomodationsContent}</p>
