@@ -4,7 +4,7 @@ html{
   height:100%;
 }
 body{
-  font-family:'Dosis' !important;
+  font-family:'Dosis';
 }
 .thumbnail > img{
   height:100%;
@@ -20,6 +20,7 @@ body{
   padding:15px;
   height:110px;
   display:flex;
+  position:relative;
 }
 .thumbnail:hover{
   color:#666;
@@ -30,10 +31,7 @@ body{
   flex-grow:1;
   width:100%;
   height:100%;
-}
-.thumbnail-side-content h2 {
-  font-size:30px;
-}
+} 
 #thumbnail-container{
   min-height:78vh;
   padding-top:30px;
@@ -66,6 +64,14 @@ color:white;
 .hidden{
   visibility:hidden;
 }
+.thumbnail-side-content > .icon{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+}
+.icon.sound{
+  right:50px;
+}
 .icon{
   border-radius: 50%;
   width:30px;
@@ -74,7 +80,7 @@ color:white;
   margin-right:10px;
 }
 .title-bar > h1{
-  font-size:50px;
+  font-size:calc(2rem + 1vw);
 }
 .title-bar > img{
   width:100px;
@@ -182,3 +188,31 @@ a:hover{
 .btn{
   transition: none;
 }
+/* MEDIA QUERIES*/
+
+@media (min-width: 576px) { 
+ }
+
+@media (min-width: 768px) { 
+  .thumbnail{
+    height:100px;
+  }
+  .thumbnail > img{
+    height:90%;
+  }
+ }
+
+@media (min-width: 992px) { 
+  .thumbnail{
+    height:110px;
+  }
+ }
+
+@media (min-width: 1200px) {  }
+
+@media (min-width: 1400px) { 
+  .thumbnail{
+    height:120px;
+  }
+ }
+/* END MEDIA QUERIES */
