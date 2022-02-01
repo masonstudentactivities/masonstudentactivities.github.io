@@ -84,6 +84,7 @@ color:white;
   height:30px;
   aspect-ratio: 1/1 !important;
   margin-right:10px;
+  display:inline-block;
 }
 .icon-image{
     width:30px;
@@ -144,7 +145,9 @@ color:white;
   background:#44695d;
   font-size:22px;
 }
-
+.info-bar img{
+  vertical-align:top;
+}
 .filter > .btn:focus{
   box-shadow:0 0 0 .17rem #fffcf9;
 }

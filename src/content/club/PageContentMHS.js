@@ -19,6 +19,7 @@ function PageContent(props){
                 <div className="container">
                     <Icon type="sound" level={data.soundRating}></Icon>
                     <Icon type="mobility" level={data.mobilityRating}></Icon>
+                    <span>Dissaspanointment but idk how to spell</span>
                 {
                     data.schoologyPage !== undefined &&
                     <a href={data.schoologyPage} className="site-link">Schoology Link</a>
