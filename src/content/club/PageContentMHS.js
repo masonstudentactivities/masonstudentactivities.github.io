@@ -2,13 +2,16 @@ import formatDate from "./../../functions/formatDate";
 import { Link } from './../../components/Router';
 import Icon from "./../../components/Icon";
 import React from "react";
+import validateLink from "./validateLink";
 function PageContent(props){
     let data = props.data;
+    data.schoologyPage = validateLink(data.schoologyPage);
+    data.website = validateLink(data.website);
     console.log(data.soundRating);
     return (
         <div>
-            <div className="container">
-                <Link to="/mhs" className="back-button">&lt; Back to MHS</Link>
+            <div className="container page-title-bar">
+                <Link to="/mhs" className="back-button"><h3>&lt; Back to MHS</h3></Link>
                 <h1 className="club-title">{data.name}</h1>
                 <div className="green-divider"></div>
             </div>

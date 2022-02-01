@@ -98,7 +98,6 @@ color:white;
 .back-button{
   position:relative;
   right:20px;
-  font-size:27px;
   margin-bottom:0;
   margin-top:0.5rem;
   display:block;
@@ -110,9 +109,10 @@ color:white;
   position:relative;
   right:20px;
   margin-bottom:20px;
+  margin-top:10px;
 }
 .club-title{
-  font-size:70px;
+  font-size:calc(2rem + 1vw);;
 }
 /* Darkmode */
 .back-button{
@@ -189,8 +189,13 @@ a:hover{
   transition: none;
 }
 /* MEDIA QUERIES*/
-
+@media (max-width:576px){
+  .page-title-bar{
+    margin-left:20px;
+  }
+}
 @media (min-width: 576px) { 
+
  }
 
 @media (min-width: 768px) { 
