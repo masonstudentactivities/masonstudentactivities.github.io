@@ -14,14 +14,12 @@ function App() {
             <Routes path="*"/>
           </Router>
         </React.Suspense>
-        <footer id="footer">
+        <footer id="footer" className="d-flex align-items-center">
           <div className="container">
-            <div>
+            <h5>If you have any questions regarding student activities, email:</h5>
+            <h5>
               <b>MHS Student Activities Coordinator</b>: Lorri Fox Allen &lt;AllenL@masonohioschools.com&gt;
-            </div>
-            <div>
-              <b>Site Maintainer</b>: Luke Trenaman &lt;luke.trenaman30@masonohioschools.com&gt;
-            </div>
+            </h5>
           </div>
         </footer>
       </Root>
