@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import BootstrapDropdown from './BootstrapDropdown';
 import Thumbnail from "./Thumbnail";
 import Meta from "../../components/Meta";
-
+import Footer from "../../components/Footer";
 const filterData = {
   "Category":["Any","Honors Societies","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
   "Noise Level":["Any","Low","Medium","High"],
@@ -85,14 +85,17 @@ class index extends React.Component {
     return (
       <>
       <Meta/>
-      <Header navAddition={Navbar}/>
-      <div id="thumbnail-container">
-        <div className="container-md-fluid container-xl">
-          <div className="row gx-3 gy-3">
-            {cards}
+      <div id="site-content" className="content">
+        <Header navAddition={Navbar}/>
+        <div id="thumbnail-container">
+          <div className="container-md-fluid container-xl">
+            <div className="row gx-3 gy-3">
+              {cards}
+            </div>
           </div>
         </div>
       </div>
+      <Footer/>
       </>
       )
   }

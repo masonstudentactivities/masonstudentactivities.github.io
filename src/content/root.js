@@ -5,9 +5,10 @@ import Meta from "./../components/Meta";
 function root(){
     return(<>
         <Meta/>
-        <p>You are at the root of the website!</p>
-        <p><Link to="/mms">Mason middle school</Link></p>
-        <p><Link to="/mhs">Mason high school</Link></p>
+        <div className="no-overflow">
+            <Link className="homepage-btn ms-bg" to="/mms"><h1>Middle School</h1></Link>
+            <Link className="homepage-btn hs-bg" to="/mhs"><h1>High School</h1></Link>
+        </div>
     </>);
 }
 export default root;

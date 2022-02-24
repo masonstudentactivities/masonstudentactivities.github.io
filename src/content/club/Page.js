@@ -4,12 +4,14 @@ import Header from "./../../components/Header";
 import { Helmet } from 'react-helmet';
 import Meta from "../../components/Meta";
 import MappedPage from "./MappedPage";
+import Footer from "../../components/Footer";
 function Page() {
     const { site,page } = useRouteData();
     return (
         <>
         <Meta/>
-        <MappedPage directory={site.directory} data={page}/>
+        <MappedPage id="site-content" className="content" directory={site.directory} data={page}/>
+        <Footer/>
         </>
     );
 }

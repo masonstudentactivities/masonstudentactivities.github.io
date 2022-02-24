@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 html{
   height:100%;
 }
@@ -136,6 +137,32 @@ color:white;
 }
 .info-bar img{
   vertical-align:top;
+}
+/* Homepage */
+.homepage-btn{
+  height:100vh;
+  width:50%;
+  background-size:cover;
+  display:inline-flex;
+  justify-content: center;
+  align-items:center;
+  color:#fffcf9;
+  text-decoration:none;
+}
+.homepage-btn h1{
+  font-size:10vh;
+}
+.homepage-btn:hover{
+  color:#fffcf9;
+}
+.ms-bg{
+  background-image:url("/images/images/ms-bg.png");
+}
+.hs-bg{
+  background-image:url("/images/images/hs-bg.png");
+}
+.no-overflow{
+  line-height:0;
 }
 /* Darkmode */
 @media (prefers-color-scheme: dark) {
@@ -287,6 +314,10 @@ color:white;
 @media (max-width:576px){
   .page-title-bar{
     margin-left:20px;
+  }
+  .homepage-btn{
+    width:100%;
+    height:50vh;
   }
 }
 @media (min-width: 576px) { 
