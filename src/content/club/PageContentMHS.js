@@ -69,7 +69,9 @@ function PageContent(props){
                     <p>{data.sectionAccomodationsContent}</p>
                 </>
             }
-            <p>Updated on: {formatDate(data.timestamp)}</p>
+            <h4>Accomodations</h4>
+            <p>If your student has an Individualized Education Plan and needs accommodations to participate, please contact the advisor/coach and your student's Intervention Specialist.</p>
+            <p><i>Updated on: {formatDate(data.timestamp)}</i></p>
         </div>
     </div>
     )

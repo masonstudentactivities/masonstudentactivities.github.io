@@ -48,7 +48,7 @@ export default {
       console.log(site.directory);
       pagesObj.push({
         "path": `/${site.directory}`,
-        "template": "src/content/homepage/index",
+        "template": "src/content/homepage/homepage",
         getData: () => ({
           "site":site
         })

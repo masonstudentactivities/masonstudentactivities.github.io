@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from './../../components/Router';
+import { Link } from '../../components/Router';
 import { useRouteData } from "react-static";
-import Header from "./../../components/Header";
+import Header from "../../components/Header";
 import BootstrapDropdown from './BootstrapDropdown';
 import Thumbnail from "./Thumbnail";
-import Meta from "./../../components/Meta";
+import Meta from "../../components/Meta";
 
 const filterData = {
   "Category":["Any","Honors Societies","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
