@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{62:function(e,a,t){"use strict";t.r(a);var n=t(0),r=t.n(n),c=t(15),u=(t(134),t(28),t(133)),o=t(136);a.default=function(){var e=Object(c.useRouteData)(),a=e.site,t=e.page;return r.a.createElement(r.a.Fragment,null,r.a.createElement(u.a,null),r.a.createElement(o.a,{directory:a.directory,data:t}))}}}]);
