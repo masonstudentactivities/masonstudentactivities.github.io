@@ -9,7 +9,7 @@ function Thumbnail(props){
     let {site} = useRouteData();
     return(
       <div className="col-12 col-sm-12 col-md-6 col-lg-4 ">
-        <Link to={`/${site.directory}/${page.name}`} className={"thumbnail " + (props.shouldBeVisible ? "" : "hidden")}>
+        <Link to={`/${site.directory}/${page.name.replaceAll(" ","-").toLowerCase()}`} className={"thumbnail " + (props.shouldBeVisible ? "" : "hidden")}>
         <img src={`/images/thumbnails/${site.directory}/${page.name}.${page.fileExtension}`}/>
         <div className="thumbnail-side-content">
           <Icon type="sound" level={page.soundRating}></Icon>

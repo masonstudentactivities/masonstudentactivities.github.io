@@ -62,7 +62,7 @@ export default {
       });
       pagesObj = pagesObj.concat(
         pages.map((page) => ({
-          "path": `/${site.directory}/${page.name}`,
+          "path": `/${site.directory}/${page.name.replaceAll(" ","-").toLowerCase()}`,
           "template": "src/content/club/Page",
           getData: () => ({
             "site": site,
