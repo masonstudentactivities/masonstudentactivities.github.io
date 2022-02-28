@@ -11,8 +11,7 @@ export default {
     Html,
     Head,
     Body,
-    children,
-    state: { siteData, renderMeta },
+    children
   }) => (
     <Html lang="en-US">
       <Head>
@@ -42,10 +41,14 @@ export default {
   ),
   siteRoot: "https://masonstudentactivities.github.io",
   getRoutes: async () => {
+    //Reference: https://github.com/react-static/react-static/blob/master/docs/config.md#getroutes
+    //What we're doing here is telling react-static which components to create as pages, given their path
+    //We have a bunch of JSON data in pagesMHS.json and pagesMMS.json, so let's turn them into unique pages using our components
     let pagesObj = [];
+    //Runs twice, once for MMS and once for MHS
     config.sites.forEach(function (site) {
-      const pages = require(`./src/pages${site.directory.toUpperCase()}.json`); //Change this line based on JSON file setup
-      console.log(site.directory);
+      const pages = require(`./src/pages${site.directory.toUpperCase()}.json`);
+      //Create a homepage
       pagesObj.push({
         "path": `/${site.directory}`,
         "template": "src/content/homepage/homepage",
@@ -53,6 +56,7 @@ export default {
           "site":site
         })
       });
+      //Create a preview page
       pagesObj.push({
         "path": `/${site.directory}/preview`,
         "template": "src/content/preview/Preview",
@@ -60,6 +64,7 @@ export default {
           "site":site
         })
       });
+      //Create all pages for this site
       pagesObj = pagesObj.concat(
         pages.map((page) => ({
           "path": `/${site.directory}/${page.name.replaceAll(" ","-").toLowerCase()}`,
@@ -71,7 +76,8 @@ export default {
         }))
       );
     });
-    console.log(pagesObj);
+    //Add the homepage, and combine it with all of our other pages
+    //Now react-static knows where to look to build the site
     return [
       {
         "path": `/`,

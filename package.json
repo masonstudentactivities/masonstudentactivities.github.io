@@ -1,6 +1,10 @@
 {
   "name": "masonstudentactivities.github.io",
   "homepage": "https://masonstudentactivities.github.io/",
+  "prettier":{
+    "bracketSpacing":false,
+    "bracketSameLine":true
+  },
   "main": "index.js",
   "private": true,
   "scripts": {

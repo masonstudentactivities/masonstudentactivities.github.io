@@ -3,11 +3,15 @@ import { Link } from './../../components/Router';
 import Icon from "./../../components/Icon";
 import React from "react";
 import validateLink from "./validateLink";
+/*
+    Note that MHS and MMS have different page strucutres
+    When implementing global changes, edit both PageContentMHS.js and PageContentMMS.js
+    If changes are specific to a certain school, just edit the individual page
+*/
 function PageContent(props){
     let data = props.data;
     data.schoologyPage = validateLink(data.schoologyPage);
     data.website = validateLink(data.website);
-    console.log(data.soundRating);
     return (
         <div>
             <div className="container page-title-bar">

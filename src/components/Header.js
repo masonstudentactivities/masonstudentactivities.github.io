@@ -8,7 +8,7 @@ function Header(props){
         <header>
             <div className="container">
                 <div className="title-bar">
-                    <Link to="/"><img src="/images/logos/logo_light.png"/></Link>
+                    <Link to="/"><img src="/images/logos/logo_light.png" alt="Logo for Mason City Schools"/></Link>
                     <h1>{site.directory.toUpperCase()} Student Activities</h1>
                 </div>
                 <p>This site is currently under development! To find student activities information please visit the <a href = "https://sites.google.com/masonohioschools.com/mhsactivities2021/home?scrlybrkr=e3f4ff9b">Google Site</a></p>
