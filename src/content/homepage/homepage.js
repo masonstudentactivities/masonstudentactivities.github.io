@@ -5,6 +5,7 @@ import BootstrapDropdown from './BootstrapDropdown';
 import Thumbnail from "./Thumbnail";
 import Meta from "../../components/Meta";
 import Footer from "../../components/Footer";
+import Calendar from "../calendar/Calendar";
 //Filter categories. These must be manually synced with the google form given any changes.
 const filterData = {
   "Category":["Any","Honors Societies","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
@@ -99,6 +100,7 @@ class index extends React.Component {
         { /* This part is also pretty strange. We want to re-use our header component, but also want our navbar in the header.
         So, we pass the Navbar we built with our filter dropdowns, and pass it as a prop to the Navbar component. */}
         <Header navAddition={Navbar}/>
+        <Calendar/>
         <div id="thumbnail-container">
           <div className="container-md-fluid container-xl">
             <div className="row gx-3 gy-3">
