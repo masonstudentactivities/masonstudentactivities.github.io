@@ -5,13 +5,18 @@ import interactionPlugin from "@fullcalendar/interaction" // needed for dayClick
 
 export default class DemoApp extends React.Component {
   addOneDay(dateString){
-    var startDate = new Date(dateString);
-    console.log(startDate);
-    startDate.setDate(startDate.getDate() + 1)
+      try{
+        var startDate = new Date(Date.parse(dateString));
+        startDate.setMinutes(startDate.getMinutes() + startDate.getTimezoneOffset());
 
-    // endDate.setDate(startDate.getDate() + 1);
-     var newString = startDate.toLocaleDateString("en-GB").split("/");
-     return newString[2] + "-0" + newString[0] + "-0" + newString[1];
+        startDate.setDate(startDate.getDate() + 1);
+        console.log(startDate);
+        // endDate.setDate(startDate.getDate() + 1);
+        return startDate.toISOString().split('T')[0];
+      } catch{
+          console.error("Malformed date string " + dateString);
+        return "";
+      }
   }
   render() {
     return (
@@ -25,7 +30,7 @@ export default class DemoApp extends React.Component {
             {
                 title:"Multiple days",
                 start:'2022-03-02',
-                end:this.addOneDay('2022-03-05 UTC-5')
+                end:this.addOneDay('2022-03-05')
             }
           ]}
       />
