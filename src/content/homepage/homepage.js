@@ -99,8 +99,9 @@ class index extends React.Component {
       <div id="site-content" className="content">
         { /* This part is also pretty strange. We want to re-use our header component, but also want our navbar in the header.
         So, we pass the Navbar we built with our filter dropdowns, and pass it as a prop to the Navbar component. */}
-        <Header navAddition={Navbar}/>
-        <Calendar/>
+        <Header navAddition={<>
+          {Navbar}
+        </>}/>
         <div id="thumbnail-container">
           <div className="container-md-fluid container-xl">
             <div className="row gx-3 gy-3">
