@@ -60,7 +60,7 @@ export default {
       if(site.directory === "mhs"){
         pagesObj = pagesObj.concat(
           events.map((event) => ({
-            "path": `/${site.directory}/calendar/${event.title.replaceAll(" ","-").toLowerCase()}`,
+            "path": `/${site.directory}/calendar/${event.name.replaceAll(" ","-").toLowerCase()}`,
             "template": "src/content/calendar/EventPage",
             getData: () => ({
               "site": site,

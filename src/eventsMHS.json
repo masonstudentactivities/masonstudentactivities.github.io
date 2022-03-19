@@ -12,5 +12,40 @@
         "soundRating":"low",
         "description":"Participate in Dress-Up days to show spirit for Mason. You can find the themes for each day on social media, student announcements, flyers in the hallways, you can ask a teacher, or reach out to Student Government.",
         "date":"3/23/2022-3/30/2022"
+    },
+    {
+        "name":"spam event 1",
+        "mobilityRating":"low",
+        "soundRating":"low",
+        "description":"Participate in Dress-Up days to show spirit for Mason. You can find the themes for each day on social media, student announcements, flyers in the hallways, you can ask a teacher, or reach out to Student Government.",
+        "date":"3/16/2022"
+    },
+    {
+        "name":"spam event 2",
+        "mobilityRating":"low",
+        "soundRating":"low",
+        "description":"Participate in Dress-Up days to show spirit for Mason. You can find the themes for each day on social media, student announcements, flyers in the hallways, you can ask a teacher, or reach out to Student Government.",
+        "date":"3/16/2022"
+    },
+    {
+        "name":"spam event 3",
+        "mobilityRating":"low",
+        "soundRating":"low",
+        "description":"Participate in Dress-Up days to show spirit for Mason. You can find the themes for each day on social media, student announcements, flyers in the hallways, you can ask a teacher, or reach out to Student Government.",
+        "date":"3/16/2022"
+    },
+    {
+        "name":"spam event 4",
+        "mobilityRating":"low",
+        "soundRating":"low",
+        "description":"Participate in Dress-Up days to show spirit for Mason. You can find the themes for each day on social media, student announcements, flyers in the hallways, you can ask a teacher, or reach out to Student Government.",
+        "date":"3/16/2022"
+    },
+    {
+        "name":"spam event 5",
+        "mobilityRating":"low",
+        "soundRating":"low",
+        "description":"Participate in Dress-Up days to show spirit for Mason. You can find the themes for each day on social media, student announcements, flyers in the hallways, you can ask a teacher, or reach out to Student Government.",
+        "date":"3/16/2022"
     }
 ]

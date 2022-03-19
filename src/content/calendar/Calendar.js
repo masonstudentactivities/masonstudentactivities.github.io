@@ -1,6 +1,7 @@
 import React from 'react'
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
+import interaction from "@fullcalendar/interaction"
 import events from "../../eventsMHS.json";
 export default class DemoApp extends React.Component {
     parse(events){
@@ -17,6 +18,9 @@ export default class DemoApp extends React.Component {
                 events[i].start = this.formatDate(date[0],0);
                 events[i].end = this.formatDate(date[1],1);
                 delete events[i].date;
+            } else{
+              let date = events[i].date;
+              events[i].start = this.formatDate(date,0);
             }
             console.log(events[i]);
         }
@@ -39,8 +43,17 @@ export default class DemoApp extends React.Component {
   render() {
     return (
       <FullCalendar
-        plugins={[ dayGridPlugin ]}
+        plugins={[interaction, dayGridPlugin ]}
         events={this.parse(events)}
+        dayMaxEventRows={3}
+        views={
+          {
+            dayGridMonth: {
+              dayMaxEventRows: 3 // adjust to 6 only for timeGridWeek/timeGridDay
+            }
+          }
+        }
+        defaultView="dayGridMonth"
       />
     )
   }

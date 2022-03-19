@@ -208,7 +208,7 @@ color:white;
   #thumbnail-container{
     background:#44695d;
   }
-  #event-preview{
+  .calendar-page{
     background:#44695d;
     color:white;
   }
@@ -241,6 +241,10 @@ color:white;
     color:#98ddb3;
   }
 }
+.calendar-page{
+  padding-top:20px;
+  padding-bottom:20px;
+}
 /* Lightmode */
 @media (prefers-color-scheme: light) {
   .title-bar img{
@@ -256,7 +260,7 @@ color:white;
     color:#102026;
   }
   .info-bar{
-    background:#a1c8af;
+    background:#bcbfbc;
     font-size:22px;
   }
   .filter > .btn:focus{
@@ -276,6 +280,9 @@ color:white;
     background:#fffcf9;
     color:#102026;
   }
+  .fc{
+    background:#fffcf9;
+  }
   .thumbnail:hover{
     color:#222222;
   }
@@ -283,11 +290,10 @@ color:white;
     background:#102026;
   }
   #thumbnail-container{
-    background:#44695d;
+    background:#bcbfbc;
   }
-  #event-preview{
-    background:#44695d;
-    color:white;
+  .calendar-page{
+    background:#bcbfbc;
   }
   #footer{
     background:#94d6ae;
