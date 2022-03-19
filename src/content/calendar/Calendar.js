@@ -10,7 +10,8 @@ export default class DemoApp extends React.Component {
                 start:'2022-03-02',
                 end:this.addOneDay('2022-03-05 UTC-5')
             } */
-            events[i].url = "/mhs/calendar/" + events[i].title.replaceAll(" ","-").toLowerCase();
+            events[i].title = events[i].name
+            events[i].url = "/mhs/calendar/" + events[i].name.replaceAll(" ","-").toLowerCase();
             if(events[i].date.split("-").length > 1){
                 let date = events[i].date.split("-");
                 events[i].start = this.formatDate(date[0],0);

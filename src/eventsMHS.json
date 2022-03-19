@@ -1,9 +1,16 @@
 [
     {
-        "title":"Spirit Week",
-        "mobility":"1",
-        "sound":"1",
+        "name":"Spirit Week",
+        "mobilityRating":"low",
+        "soundRating":"low",
         "description":"Participate in Dress-Up days to show spirit for Mason. You can find the themes for each day on social media, student announcements, flyers in the hallways, you can ask a teacher, or reach out to Student Government.",
         "date":"3/15/2022-3/22/2022"
+    },
+    {
+        "name":"Spirit Week (again)",
+        "mobilityRating":"low",
+        "soundRating":"low",
+        "description":"Participate in Dress-Up days to show spirit for Mason. You can find the themes for each day on social media, student announcements, flyers in the hallways, you can ask a teacher, or reach out to Student Government.",
+        "date":"3/23/2022-3/30/2022"
     }
 ]

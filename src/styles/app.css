@@ -199,11 +199,18 @@ color:white;
     background:#102026;
     color:#fffcf9;
   }
+  .thumbnail:hover{
+    color:#dddddd;
+  }
   .icon{
     background:#fffcf9;
   }
   #thumbnail-container{
     background:#44695d;
+  }
+  #event-preview{
+    background:#44695d;
+    color:white;
   }
   #footer{
     background:#79b290;
@@ -232,9 +239,6 @@ color:white;
   }
   a:hover{
     color:#98ddb3;
-  }
-  .thumbnail:hover{
-    color:#dddddd;
   }
 }
 /* Lightmode */
@@ -272,11 +276,18 @@ color:white;
     background:#fffcf9;
     color:#102026;
   }
+  .thumbnail:hover{
+    color:#222222;
+  }
   .icon{
     background:#102026;
   }
   #thumbnail-container{
     background:#44695d;
+  }
+  #event-preview{
+    background:#44695d;
+    color:white;
   }
   #footer{
     background:#94d6ae;
@@ -305,9 +316,6 @@ color:white;
   }
   a:hover{
     color:#81bd98;
-  }
-  .thumbnail:hover{
-    color:#222222;
   }
 }
 /* MEDIA QUERIES*/
