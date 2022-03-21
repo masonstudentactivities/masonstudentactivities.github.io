@@ -64,7 +64,7 @@ export default {
             "template": "src/content/calendar/EventPage",
             getData: () => ({
               "site": site,
-              "events": events
+              "event": event
             }),
           }))
         );
