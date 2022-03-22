@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "../../components/Router";
 import { useRouteData } from "react-static";
 import Icon from "./../../components/Icon";
-
+import sanitize from "../../functions/sanitize";
 function Thumbnail(props){
     let page = props.page;
     let {site} = useRouteData();
@@ -18,7 +18,7 @@ function Thumbnail(props){
            */
         }
         <Link to={`/${site.directory}/${page.name.replaceAll(" ","-").toLowerCase()}`} className={"thumbnail"}>
-        <img src={`/images/thumbnails/${site.directory}/${page.name}.${page.fileExtension}`} alt={"Thumbnail for" + page.name}/>
+        <img src={`/images/thumbnails/${site.directory}/${sanitize(page.name)}.${page.fileExtension}`} alt={"Thumbnail for" + page.name}/>
         <div className="thumbnail-side-content">
           <Icon type="sound" level={page.soundRating}></Icon>
           <Icon type="mobility" level={page.mobilityRating}></Icon>
