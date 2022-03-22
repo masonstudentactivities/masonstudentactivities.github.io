@@ -69,7 +69,7 @@ color:white;
   margin-right:10px;
 }
 .hidden{
-  visibility:hidden;
+  display:none;
 }
 .thumbnail-side-content > .icon{
   position:absolute;
@@ -199,11 +199,18 @@ color:white;
     background:#102026;
     color:#fffcf9;
   }
+  .thumbnail:hover{
+    color:#dddddd;
+  }
   .icon{
     background:#fffcf9;
   }
   #thumbnail-container{
     background:#44695d;
+  }
+  .calendar-page{
+    background:#44695d;
+    color:white;
   }
   #footer{
     background:#79b290;
@@ -233,9 +240,10 @@ color:white;
   a:hover{
     color:#98ddb3;
   }
-  .thumbnail:hover{
-    color:#dddddd;
-  }
+}
+.calendar-page{
+  padding-top:20px;
+  padding-bottom:20px;
 }
 /* Lightmode */
 @media (prefers-color-scheme: light) {
@@ -252,7 +260,7 @@ color:white;
     color:#102026;
   }
   .info-bar{
-    background:#a1c8af;
+    background:#bcbfbc;
     font-size:22px;
   }
   .filter > .btn:focus{
@@ -272,11 +280,20 @@ color:white;
     background:#fffcf9;
     color:#102026;
   }
+  .fc{
+    background:#fffcf9;
+  }
+  .thumbnail:hover{
+    color:#222222;
+  }
   .icon{
     background:#102026;
   }
   #thumbnail-container{
-    background:#44695d;
+    background:#bcbfbc;
+  }
+  .calendar-page{
+    background:#bcbfbc;
   }
   #footer{
     background:#94d6ae;
@@ -305,9 +322,6 @@ color:white;
   }
   a:hover{
     color:#81bd98;
-  }
-  .thumbnail:hover{
-    color:#222222;
   }
 }
 /* MEDIA QUERIES*/

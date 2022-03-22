@@ -5,6 +5,8 @@ import BootstrapDropdown from './BootstrapDropdown';
 import Thumbnail from "./Thumbnail";
 import Meta from "../../components/Meta";
 import Footer from "../../components/Footer";
+import { Link } from "../../components/Router";
+import Calendar from "../calendar/Calendar";
 //Filter categories. These must be manually synced with the google form given any changes.
 const filterData = {
   "Category":["Any","Honors Societies","Sports","Gaming","Technology","Academic","Involvement","Arts","Other"],
@@ -18,7 +20,7 @@ function withPageJSON(Component) {
   return function WrappedComponent(props) {
     const { site } = useRouteData();
     let pages = require(`./../../pages${site.directory.toUpperCase()}.json`);
-    return <Component {...props} pages={pages} />;
+    return <Component {...props} pages={pages} site={site} />;
   }
 }
 
@@ -50,6 +52,7 @@ class index extends React.Component {
   }
   render(){
     let pages = this.props.pages;
+    let site = this.props.site;
     //Create a bootstrap dropdown component that passes state up through the filtersUpdate method
     let filters = Object.keys(filterData).map((property) => {
       return <BootstrapDropdown key={property} filtersUpdate={this.filtersUpdate.bind(this)} name={property} options={filterData[property]}/>
@@ -80,6 +83,16 @@ class index extends React.Component {
           <Thumbnail key={i} page={pages[i]} shouldBeVisible={shouldBeVisisble(i)}/>
         )
     }
+    let eventRollup;
+    if(site.directory === "mhs"){
+      eventRollup = <>
+        <div className="container">
+          <h3>Upcoming Events</h3>
+          <Calendar view="dayGridWeek"/>
+          <Link to="/mhs/calendar"><h4>&gt; View full calendar</h4></Link>
+        </div>
+      </>
+    }
     let Navbar = (
     <nav className="navbar navbar-expand-sm">
       <div className="container-fluid">
@@ -98,7 +111,12 @@ class index extends React.Component {
       <div id="site-content" className="content">
         { /* This part is also pretty strange. We want to re-use our header component, but also want our navbar in the header.
         So, we pass the Navbar we built with our filter dropdowns, and pass it as a prop to the Navbar component. */}
-        <Header navAddition={Navbar}/>
+        <Header navAddition={<>
+          {<>
+            {eventRollup}
+            {Navbar}
+          </>}
+        </>}/>
         <div id="thumbnail-container">
           <div className="container-md-fluid container-xl">
             <div className="row gx-3 gy-3">

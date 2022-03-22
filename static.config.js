@@ -46,6 +46,7 @@ export default {
     //We have a bunch of JSON data in pagesMHS.json and pagesMMS.json, so let's turn them into unique pages using our components
     let pagesObj = [];
     //Runs twice, once for MMS and once for MHS
+    const events = require(`./src/eventsMHS.json`);
     config.sites.forEach(function (site) {
       const pages = require(`./src/pages${site.directory.toUpperCase()}.json`);
       //Create a homepage
@@ -56,6 +57,16 @@ export default {
           "site":site
         })
       });
+      if(site.directory === "mhs"){
+        pagesObj.push({
+          "path": `/${site.directory}/calendar`,
+          "template": "src/content/calendar/CalendarPage",
+          getData: () => ({
+            "events":events,
+            "site":site
+          })
+        });
+      }
       //Create a preview page
       pagesObj.push({
         "path": `/${site.directory}/preview`,
