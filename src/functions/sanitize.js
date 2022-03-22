@@ -16,4 +16,4 @@ function sanitize(input) {
       .replace(windowsTrailingRe, replacement);
     return sanitized;
   }
-  
+  export default sanitize;
