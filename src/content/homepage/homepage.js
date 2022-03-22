@@ -85,7 +85,13 @@ class index extends React.Component {
     }
     let eventRollup;
     if(site.directory === "mhs"){
-      eventRollup = <Link to="/mhs/calendar">Click here to view the events calendar!</Link>
+      eventRollup = <>
+        <div className="container">
+          <h3>Upcoming Events</h3>
+          <Calendar view="dayGridWeek"/>
+          <Link to="/mhs/calendar"><h4>&gt; View full calendar</h4></Link>
+        </div>
+      </>
     }
     let Navbar = (
     <nav className="navbar navbar-expand-sm">

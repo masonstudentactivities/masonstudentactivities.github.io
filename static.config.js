@@ -58,16 +58,6 @@ export default {
         })
       });
       if(site.directory === "mhs"){
-        pagesObj = pagesObj.concat(
-          events.map((event) => ({
-            "path": `/${site.directory}/calendar/${event.name.replaceAll(" ","-").toLowerCase()}`,
-            "template": "src/content/calendar/EventPage",
-            getData: () => ({
-              "site": site,
-              "event": event
-            }),
-          }))
-        );
         pagesObj.push({
           "path": `/${site.directory}/calendar`,
           "template": "src/content/calendar/CalendarPage",

@@ -13,9 +13,9 @@ function PageContent(props){
     data.schoologyPage = validateLink(data.schoologyPage);
     data.website = validateLink(data.website);
     return (
-        <div>
+        <div id="site-content">
             <div className="container page-title-bar">
-                <Link to="/mhs" className="back-button"><h3>&lt; Back to MMS</h3></Link>
+                <Link to="/mms" className="back-button"><h3>&lt; Back to MMS</h3></Link>
                 <h1 className="club-title">{data.name}</h1>
                 <div className="green-divider"></div>
             </div>
