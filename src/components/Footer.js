@@ -8,7 +8,7 @@ function Footer(){
         <div className="container">
           <h5>If you have any questions regarding student activities, email:</h5>
           <h5>
-            <b>{site.directory.toUpperCase()} Student Activities Coordinator</b>: {site.coordinator.name} &lt;{site.coordinator.email}&gt;
+            <b>{site.directory.toUpperCase() + " " + site.coordinator.title}</b>: {site.coordinator.name} &lt;{site.coordinator.email}&gt;
           </h5>
         </div>
       </footer>

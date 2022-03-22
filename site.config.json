@@ -4,7 +4,8 @@
             "name":"Mason High School",
             "directory":"mhs",
             "coordinator":{
-                "name":"Lori Fox Allen",
+                "title":"Student Activities Director",
+                "name":"Lorri Allen",
                 "email":"AllenL@masonohioschools.com"
             }
         },
@@ -12,6 +13,7 @@
             "name":"Mason Middle School",
             "directory":"mms",
             "coordinator":{
+                "title":"Student Activities Coordinator",
                 "name":"Lori Howard",
                 "email":"HowardL@masonohioschools.com"
             }
