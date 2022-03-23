@@ -69,11 +69,11 @@ function PageContent(props){
             {
                 data.sectionAccomodationsContent !== undefined && data.sectionAccomodationsContent !== "" &&
                 <>
-                    <h4>Accomodations</h4>
+                    <h4>Accommodations</h4>
                     <p>{data.sectionAccomodationsContent}</p>
                 </>
             }
-            <h4>Accomodations</h4>
+            <h4>Accommodations</h4>
             <p>If your student has an Individualized Education Plan and needs accommodations to participate, please contact the advisor/coach and your student's Intervention Specialist.</p>
             <p><i>Updated on: {formatDate(data.timestamp)}</i></p>
         </div>
