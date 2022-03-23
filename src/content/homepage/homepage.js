@@ -86,12 +86,19 @@ class index extends React.Component {
     let eventRollup;
     if(site.directory === "mhs"){
       eventRollup = <>
-        <div className="container">
-          <h3>Upcoming Events</h3>
+        <div className="container page-content">
+          <p>Because we believe in educating the whole child at Mason High School, we provide a wide range of learning opportunities that extend beyond the classroom. Students who participate in extracurricular activities tend to do better academically. Clubs also give students the opportunity to work with peers and build lifelong friendships, develop problem-solving and leadership skills, strengthen self-esteem, and learn new things in a fun environment.  Joining a club also gives students a chance to explore their interests and talents. Please learn more about the many fantastic clubs we offer, and think about joining a few! <b>We have something for everyone!</b></p>
+          <h4>Upcoming Events</h4>
           <Calendar view="dayGridWeek"/>
           <Link to="/mhs/calendar"><h4>&gt; View full calendar</h4></Link>
         </div>
       </>
+    } else{
+      eventRollup = <div className="container page-content">
+        <p>
+        At Mason Middle School, we believe in balancing academics, athletics and arts for all of our students.  With more than 35 active clubs plus sports teams and after school activities offered, you are sure to find one that matches your interests.  So why not take a risk and find a new passion!
+        </p>
+      </div>
     }
     let Navbar = (
     <nav className="navbar navbar-expand-sm">

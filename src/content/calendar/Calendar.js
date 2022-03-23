@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import interaction from "@fullcalendar/interaction"
 import googleCalendarPlugin from "@fullcalendar/google-calendar"
 import events from "../../eventsMHS.json";
+import "../../styles/calendarStyle.css";
 export default class Calendar extends React.Component {
   render() {
     if (typeof window !== "undefined") {
@@ -21,11 +22,20 @@ export default class Calendar extends React.Component {
             {
               dayGridMonth: {
                 dayMaxEventRows: 3 // adjust to 6 only for timeGridWeek/timeGridDay
+              },
+              dayGridWeek:{
+                dayMaxEventRows: 3
               }
             }
           }
+          height={this.props.view === "dayGridWeek" ? 200 : "100vh"}
+          contentHeight={"auto"}
           initialView={this.props.view}
-          height={this.props.view === "dayGridWeek" ? 200 : undefined}
+          headerToolbar={this.props.view === "dayGridMonth" ? {
+            start: 'title', // will normally be on the left. if RTL, will be on the right
+            center: '',
+            end: 'prev,next,today' // will normally be on the right. if RTL, will be on the left
+          } : false}
         />
         </>
       )

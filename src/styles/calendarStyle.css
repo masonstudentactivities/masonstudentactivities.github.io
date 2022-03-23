@@ -1,0 +1,52 @@
+.fc-col-header-cell-cushion,.fc-daygrid-day-number,.fc-toolbar-title{
+    text-decoration:none;
+    color:black;
+    font-family: "Nunito";
+    font-weight:400;
+}
+.fc-toolbar-title{
+    display:inline-block;
+}
+.fc .fc-button, .fc .fc-today-button{
+    margin-left:6px;
+    background-color: #BBD7C4;
+    border:0;
+    padding:0.2em 0.2em;
+    font-family:"Nunito";
+}
+.fc .fc-button:hover{
+    background-color:#8eb99b;
+}  
+.fc .fc-today-button{
+    background-color: #7eac8c;
+}
+.fc .fc-today-button:hover{
+    background-color: #517c5e;
+}
+.fc .fc-button-primary:disabled{
+    background-color: #586d5e;
+}
+.fc-toolbar-title{
+    vertical-align:middle;
+}
+.fc .fc-next-button,.fc .fc-prev-button{
+    vertical-align:middle;
+}
+.fc-media-screen{
+    padding-top:15px;
+    padding-bottom:15px;
+}
+@media (prefers-color-scheme: dark) {
+    .fc-media-screen{
+        background:#102026;
+    }
+    .fc .fc-button, .fc .fc-today-button{
+        background-color:#79B290;
+    }
+    .fc .fc-button:hover{
+        background-color:#6ea17d;
+    }  
+    .fc-theme-standard td, .fc-theme-standard th,.fc-theme-standard .fc-scrollgrid{
+        border-color:#67997E;
+    }
+}

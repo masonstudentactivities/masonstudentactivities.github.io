@@ -14,7 +14,7 @@ function CalendarPage(){
             So, we pass the Navbar we built with our filter dropdowns, and pass it as a prop to the Navbar component. */}
             <Header navAddition={
                 <div className="container">
-                    <Link to="/mhs"><h4>Go back to student activities</h4></Link>
+                    <Link to="/mhs"><h4>&lt; Go back to student activities</h4></Link>
                 </div>
             }/>
             <div className="calendar-page">
