@@ -10,6 +10,9 @@ export default class Calendar extends React.Component {
     if (typeof window !== "undefined") {
       return (
         <>
+        <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=MONTH&showTz=1&showNav=0&showPrint=0&showTabs=0&src=Y19tZjY1NmE0MmU2ZmpwdjFzYjFoNWM3NXYxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23C0CA33" width={1000} height={500}></iframe>
+        {/*<iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=AGENDA&showTz=1&showNav=0&showPrint=0&showTabs=0&src=Y19tZjY1NmE0MmU2ZmpwdjFzYjFoNWM3NXYxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23C0CA33" width={1000} height={500} />*/}
+        { /* <>
         <FullCalendar
           plugins={[interaction, dayGridPlugin,googleCalendarPlugin ]}
           googleCalendarApiKey= 'AIzaSyC9Z83mzJ3NX6c21TPhqy0fF9oVvz2akBo'
@@ -38,7 +41,9 @@ export default class Calendar extends React.Component {
           } : false}
         />
         </>
-      )
+        */}
+        </>
+)
     } else{
       return(
         <p>This calendar requires JavaScript to run.</p>
