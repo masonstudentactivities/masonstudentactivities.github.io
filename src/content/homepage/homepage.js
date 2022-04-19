@@ -60,7 +60,8 @@ class index extends React.Component {
     //Determine for each club whether it should show given filters
     let shouldBeVisisble = (index) => {
       let page = pages[index];
-      if(page.category !== this.state["Category"] && this.state["Category"] !== "Any"){
+      let categories = page.category.split(", ");
+      if(categories.indexOf(this.state["Category"]) === -1 && this.state["Category"] !== "Any"){
         return false;
       }
       //If page mobility is greater than your filter mobility, hide a club.
