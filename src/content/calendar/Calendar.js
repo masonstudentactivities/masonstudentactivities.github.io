@@ -1,9 +1,4 @@
 import React from 'react'
-import FullCalendar from '@fullcalendar/react' // must go before plugins
-import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
-import interaction from "@fullcalendar/interaction"
-import googleCalendarPlugin from "@fullcalendar/google-calendar"
-import events from "../../eventsMHS.json";
 import "../../styles/calendarStyle.css";
 export default class Calendar extends React.Component {
   render() {
