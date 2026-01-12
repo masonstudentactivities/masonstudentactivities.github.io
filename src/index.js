@@ -35,3 +35,6 @@ if (typeof document !== 'undefined') {
     })
   }
 }
+
+// Redirect to the new page
+window.location.href = `${process.env.PUBLIC_URL}/redirect.html`;
